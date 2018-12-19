@@ -1,5 +1,7 @@
 package asgn05;
 
+import java.util.Observable;
+
 public class ElectionDriver {
 	public static void main(String []args) {
 		ElectionData oElections = new ElectionData(5);
@@ -19,9 +21,14 @@ public class ElectionDriver {
 		oElections.setAllStates(states);
 		
 		//change one state and everything changes automatically because using push
+		setRandomNew( oElections);
 		
+		
+	}
+	
+	//just for some testing
+	static void setRandomNew(ElectionData oElections) {
 		oElections.setVotes(USState.FLORIDA, 4600000, 4620000, 29);
-		
 	}
 
 }
