@@ -5,8 +5,8 @@ import java.util.Observable;
 public class ElectionData extends Observable{
 	private StateVotes[] states;
 	
-	public ElectionData(int ) {
-		states=new StateVotes[]
+	public ElectionData(int num ) {
+		states=new StateVotes[num];
 	}
 	
 	public void votesChanged() {
@@ -25,6 +25,11 @@ public class ElectionData extends Observable{
 			}
 		}
 		
+	}
+	
+	public void setAllStates(StateVotes[] states) {
+		this.states=states;
+		votesChanged();
 	}
 	
 	

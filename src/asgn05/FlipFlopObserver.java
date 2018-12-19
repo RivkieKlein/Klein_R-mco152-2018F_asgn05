@@ -1,9 +1,17 @@
 package asgn05;
 
-public class FlipFlopObserver extends ElectionObserver{
+import java.util.Observable;
+import java.util.Observer;
+
+import implementedElecStrategies.ElectoralRepubSetStateStrategy;
+import implementedPoptrategies.PopularDemStrategy;
+
+public class FlipFlopObserver extends ElectionObserver implements Observer{
 	
-	public FlipFlopObserver() {
-		this.setElec(new ElectoralRepubSetStateStrategy);
-		this.setPop(new PopularDemStrategy);
+	public FlipFlopObserver(Observable o) {
+		super(o);
+		this.setElec(new ElectoralRepubSetStateStrategy());
+		this.setPop(new PopularDemStrategy());
+		this.observerName="This display has loyalty issues";
 		}
 }
